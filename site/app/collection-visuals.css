@@ -223,3 +223,77 @@
   .walk-frame { animation: none; }
   .walk-b { display: none; }
 }
+
+/* Keep standalone costume canvases above the character's eyes. */
+.costumed-hat {
+  inset: auto;
+  top: -28%;
+  left: 4%;
+  width: 92% !important;
+  height: 92% !important;
+  object-fit: contain;
+}
+
+.reward-pet .costumed-hat {
+  inset: auto;
+  top: -28%;
+  left: 4%;
+  width: 92%;
+  height: 92%;
+}
+
+.gamcha-mark {
+  position: absolute;
+  z-index: 6;
+  top: 19px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  display: flex;
+  align-items: flex-end;
+  white-space: nowrap;
+  color: #fff;
+  font: 1000 clamp(22px, 3vw, 36px)/1 Arial, sans-serif;
+  letter-spacing: -.12em;
+  text-shadow: 3px 3px 0 #171922;
+}
+
+.gamcha-mark span:nth-child(1) { color: #ff315c; }
+.gamcha-mark span:nth-child(2) { color: #ff8b32; }
+.gamcha-mark span:nth-child(3) { color: #ffd84d; }
+.gamcha-mark span:nth-child(4) { color: #65d458; }
+.gamcha-mark span:nth-child(5) { color: #2468f2; }
+.gamcha-mark span:nth-child(6) { color: #9259ff; }
+
+.collection-scene::before {
+  top: auto;
+  bottom: 18px;
+  left: 18px;
+}
+
+.collection-scene .ticket {
+  top: 18px;
+  left: 18px;
+}
+
+.reward-item {
+  top: 23%;
+  right: 7%;
+  width: 40%;
+  height: 34%;
+}
+
+.reward-copy {
+  right: 5%;
+  bottom: 28px;
+  width: 47%;
+}
+
+@media (max-width: 520px) {
+  .gamcha-mark { top: 22px; font-size: 22px; }
+  .collection-scene .ticket { top: 15px; left: 14px; transform: scale(.86); transform-origin: top left; }
+  .collection-scene::before { bottom: 12px; left: 12px; font-size: 8px; }
+  .reward-item { top: 28%; right: 4%; width: 45%; height: 28%; }
+  .reward-copy { right: 3%; bottom: 24px; width: 55%; padding: 9px 8px; }
+  .reward-copy strong { font-size: 15px; }
+  .reward-copy span { font-size: 8px; }
+}

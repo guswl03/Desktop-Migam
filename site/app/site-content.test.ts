@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { features, platforms } from "./site-content";
 
@@ -19,3 +20,15 @@ describe("feature visuals", () => {
     ]);
   });
 });
+
+describe("collection composition", () => {
+  it("keeps the hat above the face and gives the gacha mark its own space", () => {
+    const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
+    const css = readFileSync(new URL("./collection-visuals.css", import.meta.url), "utf8");
+
+    expect(page).toContain('className="gamcha-mark"');
+    expect(css).toMatch(/\.costumed-hat\s*\{[\s\S]*?top:\s*-\d+%/);
+    expect(css).toMatch(/\.reward-pet \.costumed-hat\s*\{[\s\S]*?top:\s*-\d+%/);
+  });
+});
+
