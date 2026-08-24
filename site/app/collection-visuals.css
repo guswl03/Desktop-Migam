@@ -473,3 +473,53 @@
     height: 120px;
   }
 }
+
+/* Costume-only collection card. */
+.catalog-cutout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 9px;
+  padding: 30px 14px 34px;
+}
+
+.catalog-item {
+  min-width: 0;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 5px;
+  background: #fff;
+  border: 2px solid #20222b;
+  box-shadow: 3px 3px 0 #ffd84d;
+}
+
+.catalog-item img {
+  width: 100%;
+  height: 88px;
+  object-fit: contain;
+}
+
+.catalog-item span {
+  margin-top: 3px;
+  font: 800 9px/1.2 monospace;
+  white-space: nowrap;
+}
+
+.catalog-item-locked {
+  color: #7d7f87;
+  background: #2a2c34;
+  box-shadow: 3px 3px 0 #777984;
+}
+
+.catalog-item-locked img {
+  filter: grayscale(1) brightness(.28);
+  opacity: .45;
+}
+
+.catalog-count {
+  right: 12px;
+  bottom: 10px;
+}

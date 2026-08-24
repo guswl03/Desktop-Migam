@@ -20,11 +20,20 @@ function FeatureVisual({ visual }: { visual: (typeof features)[number]["visual"]
   }
 
   return (
-    <div className="catalog-cutout">
-      <div className="catalog-chip catalog-chip-one"><img src="./pet/reward-neckwarmer.png" alt="" /></div>
-      <div className="catalog-chip catalog-chip-two"><span>?</span></div>
-      <img className="catalog-pet" src="./pet/base-idle.png" alt="코스튬 도감을 살펴보는 감자봇" />
-      <span className="catalog-count">12 / 156</span>
+    <div className="catalog-cutout" aria-label="코스튬 아이템 도감">
+      <div className="catalog-item catalog-item-owned">
+        <img src="./pet/reward-neckwarmer.png" alt="줄무늬 넥워머" />
+        <span>넥워머</span>
+      </div>
+      <div className="catalog-item catalog-item-owned">
+        <img src="./pet/costume-headphones.png" alt="검정 헤드폰" />
+        <span>헤드폰</span>
+      </div>
+      <div className="catalog-item catalog-item-locked">
+        <img src="./pet/costume-beanie.png" alt="" />
+        <span>미획득</span>
+      </div>
+      <span className="catalog-count">12 / 156 수집</span>
     </div>
   );
 }
@@ -105,6 +114,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
