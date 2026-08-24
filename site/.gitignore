@@ -2,37 +2,27 @@
 /node_modules
 /.pnp
 .pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
 
-# testing
+# testing and builds
 /coverage
-
-# next.js
 /.next/
 /.vinext/
 /out/
+/dist/
+*.tsbuildinfo
 
-# misc
+# local and deployment files
 .DS_Store
 *.pem
+.env*
+.vercel
+next-env.d.ts
+/.wrangler/
+/outputs/
+/work/
 
-# debug
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# local environment
-.env*
-
-# deployment and generated files
-.vercel
-next-env.d.ts
-/dist/
-/.wrangler/
-/outputs/
-/work/
