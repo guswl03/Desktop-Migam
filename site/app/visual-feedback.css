@@ -1,0 +1,100 @@
+/* Round 1 visual feedback */
+h1,
+h2,
+h3,
+.hero-description,
+.feature-card p,
+.download-intro {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+h1 br,
+.section-heading h2 br,
+.collection-band h2 br,
+.download-intro br {
+  display: none;
+}
+
+.hero {
+  grid-template-columns: minmax(460px, 1fr) minmax(480px, 1.12fr);
+}
+
+h1 {
+  max-width: 720px;
+  font-size: clamp(48px, 4.8vw, 76px);
+}
+
+.section-heading h2,
+.collection-band h2,
+.download h2 {
+  max-width: 760px;
+}
+
+.feature-visual {
+  position: relative;
+}
+
+.feature-card:nth-child(3) .feature-visual::after,
+.collection-scene::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 190px;
+  height: 190px;
+  background: url("/Desktop-Migam/pet/santa-hat.png") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.feature-card:nth-child(3) .feature-visual::after {
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+}
+
+.collection-scene::after {
+  inset: 50% auto auto 50%;
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%);
+}
+
+.hero-stage {
+  --stage-travel: clamp(230px, 20vw, 355px);
+}
+
+.pet-walker,
+.speech-bubble {
+  animation: stage-travel 8s ease-in-out infinite alternate;
+}
+
+.speech-bubble {
+  top: auto;
+  bottom: 248px;
+  left: 20%;
+  transform: none;
+}
+
+nav {
+  height: 100%;
+  align-items: center;
+}
+
+@keyframes stage-travel {
+  from { transform: translateX(0); }
+  to { transform: translateX(var(--stage-travel)); }
+}
+
+@media (max-width: 1050px) {
+  .hero { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .hero-stage { --stage-travel: 165px; }
+  .speech-bubble { bottom: 195px; }
+  .feature-card:nth-child(3) .feature-visual::after { width: 160px; height: 160px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-walker,
+  .speech-bubble { animation: none !important; }
+}
