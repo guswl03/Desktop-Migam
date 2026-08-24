@@ -26,8 +26,9 @@ function FeatureVisual({ visual }: { visual: (typeof features)[number]["visual"]
         <span>넥워머</span>
       </div>
 
-      <div className="catalog-item catalog-item-empty">
-        <span>헤드폰</span>
+      <div className="catalog-item catalog-item-owned">
+        <img src="./pet/costume-santa-hat.png" alt="산타 모자" />
+        <span>산타 모자</span>
       </div>
       <div className="catalog-item catalog-item-locked">
         <img src="./pet/costume-beanie.png" alt="" />
@@ -114,5 +115,6 @@ export default function Home() {
     </main>
   );
 }
+
 
 

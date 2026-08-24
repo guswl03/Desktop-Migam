@@ -26,7 +26,7 @@ describe("gacha reward flow", () => {
     const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
     const css = readFileSync(new URL("./collection-visuals.css", import.meta.url), "utf8");
 
-    expect(page).not.toContain("santa-hat.png");
+    expect(page).not.toContain('className="costumed-hat"');
     expect(page).not.toContain("./pet/idle.png");
     expect(page).toContain("./pet/base-idle.png");
     expect(page).toContain('className="gacha-flow"');
@@ -47,17 +47,19 @@ describe("costume collection card", () => {
     expect(page).toContain("./pet/costume-beanie.png");
   });
 
-  it("does not show the composite headphones image containing the red hat", () => {
+  it("shows a correctly named santa hat card at the standard size", () => {
     const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
 
-    expect(page).not.toContain("./pet/costume-headphones.png");
-    expect(page).not.toContain("검정 헤드폰");
-    expect(page).toContain('className="catalog-item catalog-item-empty"');
-    expect(page).toContain("<span>헤드폰</span>");
+    expect(page).toContain("./pet/costume-santa-hat.png");
+    expect(page).not.toContain("헤드폰");
+    expect(page).toContain('className="catalog-item catalog-item-owned"');
+    expect(page).toContain("<span>산타 모자</span>");
   });
 
 
 });
+
+
 
 
 

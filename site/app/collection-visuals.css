@@ -523,9 +523,4 @@
   right: 12px;
   bottom: 10px;
 }
-.catalog-item-empty::before {
-  content: "";
-  width: 100%;
-  height: 88px;
-}
 
