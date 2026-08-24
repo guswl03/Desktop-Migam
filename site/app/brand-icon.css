@@ -1,0 +1,9 @@
+.brand-mark {
+  overflow: hidden;
+  border: 2px solid #20222b;
+  background: #b9ecf7 url("/Desktop-Migam/app-icon.png") center / cover no-repeat;
+  box-shadow: 3px 3px 0 #20222b;
+  color: transparent;
+  font-size: 0;
+  transform: none;
+}

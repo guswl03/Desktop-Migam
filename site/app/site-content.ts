@@ -1,6 +1,6 @@
 export const platforms = [
   { name: "Windows", label: "Windows에서 만나기", note: "Windows 10·11", href: "https://github.com/guswl03/Desktop-Migam-Window" },
-  { name: "macOS", label: "Mac에서 만나기", note: "macOS 버전", href: "https://github.com/ariha1982/Desktop-Migam-Mac" },
+  { name: "macOS", label: "Mac에서 만나기", note: "macOS 버전", href: "https://github.com/guswl03/Desktop-Migam-Mac" },
 ] as const;
 
 export const features = [
