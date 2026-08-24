@@ -23,7 +23,7 @@ function FeatureVisual({ visual }: { visual: (typeof features)[number]["visual"]
     <div className="catalog-cutout">
       <div className="catalog-chip catalog-chip-one"><img src="./pet/reward-neckwarmer.png" alt="" /></div>
       <div className="catalog-chip catalog-chip-two"><span>?</span></div>
-      <img className="catalog-pet" src="./pet/idle.png" alt="코스튬 도감을 살펴보는 감자봇" />
+      <img className="catalog-pet" src="./pet/base-idle.png" alt="코스튬 도감을 살펴보는 감자봇" />
       <span className="catalog-count">12 / 156</span>
     </div>
   );
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="gacha-flow">
             <div className="gacha-step focus-reward-step">
               <span className="step-number">01</span>
-              <img src="./pet/idle.png" alt="" />
+              <img src="./pet/base-idle.png" alt="" />
               <strong>집중 완료</strong>
               <small>한 세션을 끝내면</small>
             </div>
@@ -105,6 +105,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 

@@ -27,6 +27,8 @@ describe("gacha reward flow", () => {
     const css = readFileSync(new URL("./collection-visuals.css", import.meta.url), "utf8");
 
     expect(page).not.toContain("santa-hat.png");
+    expect(page).not.toContain("./pet/idle.png");
+    expect(page).toContain("./pet/base-idle.png");
     expect(page).toContain('className="gacha-flow"');
     expect(page).toContain('className="gacha-step focus-reward-step"');
     expect(page).toContain('className="gacha-step ticket-draw-step"');
@@ -34,3 +36,4 @@ describe("gacha reward flow", () => {
     expect(css).toMatch(/\.gacha-flow\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*1fr\)/);
   });
 });
+
