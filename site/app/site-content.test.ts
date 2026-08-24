@@ -63,3 +63,13 @@ describe("costume collection card", () => {
 
 
 
+
+describe("beta release messaging", () => {
+  it("clearly labels the site as a beta test rather than a finished release", () => {
+    const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
+
+    expect(page).toContain('className="beta-badge"');
+    expect(page).toContain("BETA TEST");
+    expect(page).toContain("현재 정식 출시 전 베타 테스트 버전입니다.");
+  });
+});
