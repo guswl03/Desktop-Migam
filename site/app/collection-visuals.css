@@ -1,0 +1,75 @@
+.feature-card:first-child .feature-visual img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  object-position: center bottom;
+  mix-blend-mode: multiply;
+}
+
+.feature-card:nth-child(3) .feature-visual {
+  overflow: hidden;
+  background: #202126;
+}
+
+.feature-card:nth-child(3) .feature-visual img {
+  width: 132%;
+  max-width: none;
+  height: 132%;
+  max-height: none;
+  object-fit: cover;
+  object-position: 43% 49%;
+}
+
+.feature-card:nth-child(3) .feature-visual::after {
+  display: none;
+}
+
+.collection-scene {
+  min-height: 430px;
+  overflow: hidden;
+  background-color: #202126;
+  background-image:
+    linear-gradient(to bottom, rgba(23, 25, 34, .05), rgba(23, 25, 34, .05)),
+    url("/Desktop-Migam/pet/collection-screen.png");
+  background-repeat: no-repeat;
+  background-position: center, 47% 51%;
+  background-size: cover, 126% auto;
+  box-shadow: 12px 12px 0 #ffd84d;
+}
+
+.collection-scene > * {
+  display: none;
+}
+
+.collection-scene::before {
+  content: "COSTUME COLLECTION";
+  position: absolute;
+  z-index: 3;
+  left: 18px;
+  bottom: 16px;
+  padding: 8px 11px;
+  color: #fff;
+  background: #171922;
+  border: 1px solid #fff;
+  font: 800 11px/1 monospace;
+  letter-spacing: .08em;
+}
+
+.collection-scene::after {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .collection-scene {
+    min-height: 360px;
+    background-size: cover, 142% auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .collection-scene {
+    min-height: 285px;
+    background-size: cover, 158% auto;
+  }
+}
