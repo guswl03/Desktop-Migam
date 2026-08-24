@@ -297,3 +297,179 @@
   .reward-copy strong { font-size: 15px; }
   .reward-copy span { font-size: 8px; }
 }
+
+/* Gacha flow redesign: three independent steps, no costume overlays. */
+.catalog-pet {
+  position: relative;
+  z-index: 2;
+  width: 48%;
+  max-height: 78%;
+  object-fit: contain;
+}
+
+.catalog-chip-two {
+  color: #a9acb7;
+  background: #20222b;
+  font: 900 27px/1 monospace;
+}
+
+.collection-scene {
+  min-height: 440px;
+  display: block;
+  padding: 74px 20px 22px;
+  background: #11141d;
+  background-image: linear-gradient(135deg, rgba(36,104,242,.12), transparent 55%);
+}
+
+.collection-scene::before,
+.collection-scene::after {
+  display: none;
+}
+
+.gacha-heading {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  color: #fff;
+}
+
+.gacha-heading small {
+  color: #ffd84d;
+  font: 800 9px/1 monospace;
+  letter-spacing: .12em;
+}
+
+.gacha-heading strong {
+  font-size: 16px;
+  letter-spacing: -.03em;
+}
+
+.gacha-flow {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.gacha-step {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 38px 10px 20px;
+  text-align: center;
+  color: #171922;
+  background: #fffdf7;
+  border: 2px solid #fff;
+  box-shadow: 4px 4px 0 rgba(255,216,77,.9);
+}
+
+.gacha-step .step-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #2468f2;
+  font: 900 11px/1 monospace;
+}
+
+.gacha-step > img {
+  width: 100%;
+  height: 145px;
+  margin: auto 0 8px;
+  object-fit: contain;
+}
+
+.gacha-step > strong {
+  margin: 7px 0 5px;
+  font-size: 14px;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+.gacha-step > small {
+  min-height: 28px;
+  color: #686b75;
+  font-size: 10px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.ticket-draw-step {
+  background: #fff5b5;
+}
+
+.ticket-token {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 112px;
+  min-height: 72px;
+  margin: auto 0 4px;
+  color: #171922;
+  background: #fff;
+  border: 2px solid #171922;
+  font: 800 11px/1.2 monospace;
+  transform: rotate(-2deg);
+  box-shadow: 5px 5px 0 #2468f2;
+}
+
+.ticket-token b {
+  color: #ff315c;
+  font-size: 20px;
+}
+
+.flow-arrow {
+  margin: 12px 0 2px;
+  color: #2468f2;
+  font: 900 24px/1 monospace;
+}
+
+.item-reward-step {
+  background: #eaf1ff;
+}
+
+.reward-rarity {
+  color: #2468f2;
+  font: 800 9px/1 monospace;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 850px) {
+  .collection-scene { min-height: 420px; }
+}
+
+@media (max-width: 520px) {
+  .collection-scene {
+    min-height: auto;
+    padding: 80px 16px 20px;
+  }
+
+  .gacha-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .gacha-flow {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gacha-step {
+    min-height: 225px;
+  }
+
+  .gacha-step > img {
+    height: 120px;
+  }
+}

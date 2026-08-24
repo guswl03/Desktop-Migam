@@ -22,11 +22,8 @@ function FeatureVisual({ visual }: { visual: (typeof features)[number]["visual"]
   return (
     <div className="catalog-cutout">
       <div className="catalog-chip catalog-chip-one"><img src="./pet/reward-neckwarmer.png" alt="" /></div>
-      <div className="catalog-chip catalog-chip-two"><img src="./pet/santa-hat.png" alt="" /></div>
-      <div className="costumed-pet">
-        <img className="costumed-base" src="./pet/idle.png" alt="산타 모자를 쓴 감자봇" />
-        <img className="costumed-hat" src="./pet/santa-hat.png" alt="" />
-      </div>
+      <div className="catalog-chip catalog-chip-two"><span>?</span></div>
+      <img className="catalog-pet" src="./pet/idle.png" alt="코스튬 도감을 살펴보는 감자봇" />
       <span className="catalog-count">12 / 156</span>
     </div>
   );
@@ -72,13 +69,30 @@ export default function Home() {
 
       <section className="collection-band">
         <div><p className="eyebrow">FOCUS · EARN · COLLECT</p><h2>집중이 쌓이면<br />새로운 모습이 열려요.</h2><p>완료한 집중은 티켓이 되고, 티켓은 감자봇의 새로운 코스튬이 돼요.</p></div>
-        <div className="collection-scene" aria-label="집중 보상으로 코스튬을 획득한 감자봇">
-          <div className="gamcha-mark" aria-label="GAMCHA!"><span>G</span><span>A</span><span>M</span><span>C</span><span>H</span><span>A!</span></div>
-          <span className="ticket">TICKET <b>1</b></span>
-          <div className="reward-pet"><img className="costumed-base" src="./pet/idle.png" alt="" /><img className="costumed-hat" src="./pet/santa-hat.png" alt="" /></div>
-          <div className="reward-copy"><small>COMMON</small><strong>줄무늬 넥워머</strong><span>NEW! COLLECTION GET</span></div>
-          <img className="reward-item" src="./pet/reward-neckwarmer.png" alt="줄무늬 넥워머" />
-          <span className="spark spark-one">✦</span><span className="spark spark-two">✦</span>
+        <div className="collection-scene" aria-label="집중 완료부터 코스튬 획득까지의 흐름">
+          <div className="gacha-heading"><small>HOW GAMCHA WORKS</small><strong>집중이 보상이 되는 순간</strong></div>
+          <div className="gacha-flow">
+            <div className="gacha-step focus-reward-step">
+              <span className="step-number">01</span>
+              <img src="./pet/idle.png" alt="" />
+              <strong>집중 완료</strong>
+              <small>한 세션을 끝내면</small>
+            </div>
+            <div className="gacha-step ticket-draw-step">
+              <span className="step-number">02</span>
+              <div className="ticket-token">TICKET <b>+1</b></div>
+              <span className="flow-arrow" aria-hidden="true">→</span>
+              <strong>티켓으로 뽑기</strong>
+              <small>새 코스튬을 열어요</small>
+            </div>
+            <div className="gacha-step item-reward-step">
+              <span className="step-number">03</span>
+              <img src="./pet/reward-neckwarmer.png" alt="줄무늬 넥워머" />
+              <span className="reward-rarity">COMMON</span>
+              <strong>줄무늬 넥워머</strong>
+              <small>도감에 등록 완료</small>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -91,5 +105,6 @@ export default function Home() {
     </main>
   );
 }
+
 
 
