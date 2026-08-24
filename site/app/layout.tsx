@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./focus.css";
+import "./brand-icon.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guswl03.github.io/Desktop-Migam/"),
   title: "Desktop Migam — 집중하는 당신 곁의 작은 친구",
   description: "집중 타이머, 할 일, 감챠와 코스튬 수집을 함께하는 데스크톱 펫 Desktop Migam을 만나보세요.",
+  icons: {
+    icon: "app-icon.png",
+    apple: "app-icon.png",
+  },
   openGraph: {
     title: "Desktop Migam",
     description: "집중하는 당신 곁의 작은 데스크톱 친구",
