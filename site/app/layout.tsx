@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     description: "집중하는 당신 곁의 작은 데스크톱 친구",
     type: "website",
     locale: "ko_KR",
-    images: [{ url: "og.png", width: 1200, height: 630, alt: "Desktop Migam" }],
+    images: [{ url: "og-v2.png", width: 1200, height: 630, alt: "노트북으로 집중하는 Desktop Migam 감자 캐릭터" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Desktop Migam",
     description: "집중하는 당신 곁의 작은 데스크톱 친구",
-    images: ["og.png"],
+    images: ["og-v2.png"],
   },
 };
 
