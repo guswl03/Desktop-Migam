@@ -44,6 +44,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Desktop Migam 홈"><span className="brand-mark">M</span><span>Desktop Migam</span></a>
+<span className="beta-badge">BETA TEST</span>
         <nav aria-label="주요 메뉴"><a href="#features">기능</a><a href="#download">다운로드</a><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub</a></nav>
       </header>
 
@@ -108,6 +109,7 @@ export default function Home() {
 
       <section className="download section-shell" id="download">
         <p className="eyebrow">CHOOSE YOUR DESKTOP</p><h2>어디에서 함께할까요?</h2><p className="download-intro">사용 중인 운영체제를 선택하면 각 버전의 GitHub 저장소로 이동합니다.<br />설치 파일은 저장소의 Releases에서 받을 수 있어요.</p>
+<p className="beta-notice"><strong>베타 테스트 안내</strong><span>현재 정식 출시 전 베타 테스트 버전입니다.</span></p>
         <div className="platform-grid">{platforms.map((platform) => <a className="platform-card" href={platform.href} target="_blank" rel="noopener noreferrer" key={platform.name}><span className="platform-icon" aria-hidden="true">{platform.name === "Windows" ? "⊞" : "●"}</span><span><strong>{platform.label}</strong><small>{platform.note} · GitHub Releases</small></span><b aria-hidden="true">↗</b></a>)}</div>
       </section>
 
@@ -115,6 +117,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
