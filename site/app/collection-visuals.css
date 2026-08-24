@@ -477,8 +477,9 @@
 /* Costume-only collection card. */
 .catalog-cutout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 132px));
   align-items: center;
+  justify-content: center;
   gap: 9px;
   padding: 30px 14px 34px;
 }
@@ -523,3 +524,4 @@
   right: 12px;
   bottom: 10px;
 }
+
