@@ -37,3 +37,14 @@ describe("gacha reward flow", () => {
   });
 });
 
+
+describe("costume collection card", () => {
+  it("shows costume items without a character preview", () => {
+    const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
+
+    expect(page).not.toContain('className="catalog-pet"');
+    expect(page.match(/className="catalog-item/g)).toHaveLength(3);
+    expect(page).toContain("./pet/costume-headphones.png");
+    expect(page).toContain("./pet/costume-beanie.png");
+  });
+});
