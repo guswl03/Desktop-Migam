@@ -73,8 +73,9 @@ export default function Home() {
       <section className="collection-band">
         <div><p className="eyebrow">FOCUS · EARN · COLLECT</p><h2>집중이 쌓이면<br />새로운 모습이 열려요.</h2><p>완료한 집중은 티켓이 되고, 티켓은 감자봇의 새로운 코스튬이 돼요.</p></div>
         <div className="collection-scene" aria-label="집중 보상으로 코스튬을 획득한 감자봇">
+          <div className="gamcha-mark" aria-label="GAMCHA!"><span>G</span><span>A</span><span>M</span><span>C</span><span>H</span><span>A!</span></div>
           <span className="ticket">TICKET <b>1</b></span>
-          <div className="reward-pet"><img src="./pet/idle.png" alt="" /><img src="./pet/santa-hat.png" alt="" /></div>
+          <div className="reward-pet"><img className="costumed-base" src="./pet/idle.png" alt="" /><img className="costumed-hat" src="./pet/santa-hat.png" alt="" /></div>
           <div className="reward-copy"><small>COMMON</small><strong>줄무늬 넥워머</strong><span>NEW! COLLECTION GET</span></div>
           <img className="reward-item" src="./pet/reward-neckwarmer.png" alt="줄무늬 넥워머" />
           <span className="spark spark-one">✦</span><span className="spark spark-two">✦</span>
@@ -90,4 +91,5 @@ export default function Home() {
     </main>
   );
 }
+
 
