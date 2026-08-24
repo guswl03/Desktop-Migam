@@ -21,14 +21,16 @@ describe("feature visuals", () => {
   });
 });
 
-describe("collection composition", () => {
-  it("keeps the hat above the face and gives the gacha mark its own space", () => {
+describe("gacha reward flow", () => {
+  it("removes the hat and presents three non-overlapping reward steps", () => {
     const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
     const css = readFileSync(new URL("./collection-visuals.css", import.meta.url), "utf8");
 
-    expect(page).toContain('className="gamcha-mark"');
-    expect(css).toMatch(/\.costumed-hat\s*\{[\s\S]*?top:\s*-\d+%/);
-    expect(css).toMatch(/\.reward-pet \.costumed-hat\s*\{[\s\S]*?top:\s*-\d+%/);
+    expect(page).not.toContain("santa-hat.png");
+    expect(page).toContain('className="gacha-flow"');
+    expect(page).toContain('className="gacha-step focus-reward-step"');
+    expect(page).toContain('className="gacha-step ticket-draw-step"');
+    expect(page).toContain('className="gacha-step item-reward-step"');
+    expect(css).toMatch(/\.gacha-flow\s*\{[\s\S]*?grid-template-columns:\s*repeat\(3,\s*1fr\)/);
   });
 });
-
