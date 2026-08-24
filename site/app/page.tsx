@@ -1,0 +1,48 @@
+import { features, platforms } from "./site-content";
+
+export default function Home() {
+  return (
+    <main>
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Desktop Migam 홈"><span className="brand-mark">M</span><span>Desktop Migam</span></a>
+        <nav aria-label="주요 메뉴"><a href="#features">기능</a><a href="#download">다운로드</a><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub</a></nav>
+      </header>
+
+      <section className="hero" id="top">
+        <div className="hero-copy">
+          <p className="eyebrow">YOUR TINY FOCUS PARTNER</p>
+          <h1>집중하는 시간에<br /><em>작은 친구</em>를 더해요.</h1>
+          <p className="hero-description">Desktop Migam은 화면 한쪽에서 함께 움직이며 집중, 휴식, 할 일을 챙겨주는 데스크톱 펫이에요.</p>
+          <a className="primary-button" href="#download">내 OS 버전 선택하기 <span aria-hidden="true">↓</span></a>
+          <p className="support-note">Windows와 macOS에서 만날 수 있어요</p>
+        </div>
+        <div className="hero-stage" aria-label="화면 위를 걷는 감자봇 캐릭터">
+          <div className="window-card window-card-left"><span>FOCUS</span><strong>25:00</strong><small>오늘도 천천히, 꾸준히.</small></div>
+          <div className="window-card window-card-right"><span>TODAY</span><strong>3 / 4</strong><small>집중 세션 완료</small></div>
+          <div className="speech-bubble">집중 시작할까요?</div>
+          <div className="pet-walker"><img className="pet-frame pet-a" src="./pet/walk-0.png" alt="" /><img className="pet-frame pet-b" src="./pet/walk-1.png" alt="" /></div>
+          <div className="desktop-line" />
+        </div>
+      </section>
+
+      <section className="features section-shell" id="features">
+        <div className="section-heading"><p className="eyebrow">HOW IT HELPS</p><h2>일하는 흐름은 지키고,<br />책상 위 재미는 더하고.</h2></div>
+        <div className="feature-grid">
+          {features.map((feature) => <article className="feature-card" key={feature.number}><span className="feature-number">{feature.number}</span><div className="feature-visual"><img src={`.${feature.image}`} alt="" /></div><h3>{feature.title}</h3><p>{feature.description}</p></article>)}
+        </div>
+      </section>
+
+      <section className="collection-band">
+        <div><p className="eyebrow">FOCUS · EARN · COLLECT</p><h2>집중이 쌓이면<br />새로운 모습이 열려요.</h2><p>완료한 집중은 티켓이 되고, 티켓은 감자봇의 새로운 코스튬이 돼요.</p></div>
+        <div className="collection-scene"><span className="ticket">TICKET <b>1</b></span><img src="./pet/dance.png" alt="춤추는 감자봇" /><span className="spark spark-one">✦</span><span className="spark spark-two">✦</span></div>
+      </section>
+
+      <section className="download section-shell" id="download">
+        <p className="eyebrow">CHOOSE YOUR DESKTOP</p><h2>어디에서 함께할까요?</h2><p className="download-intro">사용 중인 운영체제를 선택하면 각 버전의 GitHub 저장소로 이동합니다.<br />설치 파일은 저장소의 Releases에서 받을 수 있어요.</p>
+        <div className="platform-grid">{platforms.map((platform) => <a className="platform-card" href={platform.href} target="_blank" rel="noopener noreferrer" key={platform.name}><span className="platform-icon" aria-hidden="true">{platform.name === "Windows" ? "⊞" : "●"}</span><span><strong>{platform.label}</strong><small>{platform.note} · GitHub Releases</small></span><b aria-hidden="true">↗</b></a>)}</div>
+      </section>
+
+      <footer><a className="brand" href="#top"><span className="brand-mark">M</span><span>Desktop Migam</span></a><p>집중하는 당신 곁의 작은 데스크톱 친구.</p><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+    </main>
+  );
+}
