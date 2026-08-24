@@ -1,5 +1,37 @@
 import { features, platforms } from "./site-content";
 
+function FeatureVisual({ visual }: { visual: (typeof features)[number]["visual"] }) {
+  if (visual === "focus") {
+    return (
+      <div className="focus-cutout">
+        <div className="mini-timer"><span>집중</span><strong>00:51</strong></div>
+        <img src="./pet/focused.png" alt="노트북을 보며 집중하는 감자봇" />
+      </div>
+    );
+  }
+
+  if (visual === "walking") {
+    return (
+      <div className="feature-walker" aria-label="걷는 감자봇">
+        <img className="walk-frame walk-a" src="./pet/walk-0.png" alt="" />
+        <img className="walk-frame walk-b" src="./pet/walk-1.png" alt="" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="catalog-cutout">
+      <div className="catalog-chip catalog-chip-one"><img src="./pet/reward-neckwarmer.png" alt="" /></div>
+      <div className="catalog-chip catalog-chip-two"><img src="./pet/santa-hat.png" alt="" /></div>
+      <div className="costumed-pet">
+        <img className="costumed-base" src="./pet/idle.png" alt="산타 모자를 쓴 감자봇" />
+        <img className="costumed-hat" src="./pet/santa-hat.png" alt="" />
+      </div>
+      <span className="catalog-count">12 / 156</span>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -28,13 +60,25 @@ export default function Home() {
       <section className="features section-shell" id="features">
         <div className="section-heading"><p className="eyebrow">HOW IT HELPS</p><h2>일하는 흐름은 지키고,<br />책상 위 재미는 더하고.</h2></div>
         <div className="feature-grid">
-          {features.map((feature) => <article className="feature-card" key={feature.number}><span className="feature-number">{feature.number}</span><div className="feature-visual"><img src={`.${feature.image}`} alt="" /></div><h3>{feature.title}</h3><p>{feature.description}</p></article>)}
+          {features.map((feature) => (
+            <article className="feature-card" key={feature.number}>
+              <span className="feature-number">{feature.number}</span>
+              <div className="feature-visual"><FeatureVisual visual={feature.visual} /></div>
+              <h3>{feature.title}</h3><p>{feature.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="collection-band">
         <div><p className="eyebrow">FOCUS · EARN · COLLECT</p><h2>집중이 쌓이면<br />새로운 모습이 열려요.</h2><p>완료한 집중은 티켓이 되고, 티켓은 감자봇의 새로운 코스튬이 돼요.</p></div>
-        <div className="collection-scene"><span className="ticket">TICKET <b>1</b></span><img src="./pet/dance.png" alt="춤추는 감자봇" /><span className="spark spark-one">✦</span><span className="spark spark-two">✦</span></div>
+        <div className="collection-scene" aria-label="집중 보상으로 코스튬을 획득한 감자봇">
+          <span className="ticket">TICKET <b>1</b></span>
+          <div className="reward-pet"><img src="./pet/idle.png" alt="" /><img src="./pet/santa-hat.png" alt="" /></div>
+          <div className="reward-copy"><small>COMMON</small><strong>줄무늬 넥워머</strong><span>NEW! COLLECTION GET</span></div>
+          <img className="reward-item" src="./pet/reward-neckwarmer.png" alt="줄무늬 넥워머" />
+          <span className="spark spark-one">✦</span><span className="spark spark-two">✦</span>
+        </div>
       </section>
 
       <section className="download section-shell" id="download">
@@ -46,3 +90,4 @@ export default function Home() {
     </main>
   );
 }
+
