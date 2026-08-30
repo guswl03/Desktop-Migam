@@ -609,7 +609,7 @@
   }
 
   .story-cover h2 {
-    font-size: clamp(70px, 24vw, 112px);
+    font-size: clamp(54px, 20vw, 112px);
   }
 
   .story-cover-copy {
