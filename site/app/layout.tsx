@@ -4,6 +4,7 @@ import "./focus.css";
 import "./brand-icon.css";
 import "./visual-feedback.css";
 import "./collection-visuals.css";
+import "./experience.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guswl03.github.io/Desktop-Migam/"),

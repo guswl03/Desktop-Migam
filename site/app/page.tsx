@@ -1,4 +1,4 @@
-import { features, platforms } from "./site-content";
+import { features, platforms, showcaseMoments } from "./site-content";
 
 function FeatureVisual({ visual }: { visual: (typeof features)[number]["visual"] }) {
   if (visual === "focus") {
@@ -45,7 +45,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Desktop Migam 홈"><span className="brand-mark">M</span><span>Desktop Migam</span></a>
 <span className="beta-badge">BETA TEST</span>
-        <nav aria-label="주요 메뉴"><a href="#features">기능</a><a href="#download">다운로드</a><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub</a></nav>
+        <nav aria-label="주요 메뉴"><a href="#features">기능</a><a href="#experience">앱 둘러보기</a><a href="#download">다운로드</a><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub</a></nav>
       </header>
 
       <section className="hero" id="top">
@@ -61,9 +61,14 @@ export default function Home() {
           <div className="window-card window-card-right"><span>TODAY</span><strong>3 / 4</strong><small>집중 세션 완료</small></div>
           <div className="speech-bubble">집중 시작할까요?</div>
           <div className="pet-walker"><img className="pet-frame pet-a" src="./pet/walk-0.png" alt="" /><img className="pet-frame pet-b" src="./pet/walk-1.png" alt="" /></div>
+          <div className="stage-status"><span className="status-dot" />DESKTOP MIGAM IS ACTIVE</div>
           <div className="desktop-line" />
         </div>
       </section>
+
+      <div className="motion-strip" aria-hidden="true">
+        <div><span>FOCUS</span><b>✦</b><span>REST</span><b>✦</b><span>COLLECT</span><b>✦</b><span>PLAY</span><b>✦</b><span>FOCUS</span><b>✦</b><span>REST</span><b>✦</b><span>COLLECT</span><b>✦</b><span>PLAY</span><b>✦</b></div>
+      </div>
 
       <section className="features section-shell" id="features">
         <div className="section-heading"><p className="eyebrow">HOW IT HELPS</p><h2>일하는 흐름은 지키고,<br />책상 위 재미는 더하고.</h2></div>
@@ -75,6 +80,36 @@ export default function Home() {
               <h3>{feature.title}</h3><p>{feature.description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="experience section-shell" id="experience">
+        <div className="experience-copy">
+          <p className="eyebrow">ACTUALLY ON YOUR DESKTOP</p>
+          <h2>앱을 켜는 순간,<br />화면에 작은 세계가 열려요.</h2>
+          <p className="experience-lead">타이머만 있는 생산성 앱이 아니에요. 집중하고, 반응하고, 보상을 모으는 흐름이 한 캐릭터 안에서 자연스럽게 이어집니다.</p>
+          <div className="moment-list">
+            {showcaseMoments.map((moment) => (
+              <article className="moment" key={moment.id}>
+                <span>{moment.index}</span>
+                <div><h3>{moment.title}</h3><p>{moment.description}</p></div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="experience-stage" aria-label="Desktop Migam 앱 화면과 기능 위젯">
+          <div className="app-window">
+            <div className="app-titlebar"><span className="window-dots"><i /><i /><i /></span><strong>GAMCHA · COLLECTION</strong><small>12 / 156</small></div>
+            <div className="app-shot">
+              <img src="./pet/collection-screen.png" alt="Desktop Migam의 실제 코스튬 수집 화면" />
+              <span className="screen-scan" aria-hidden="true" />
+            </div>
+          </div>
+          <div className="floating-widget focus-widget"><small>FOCUS SESSION</small><strong>24:18</strong><span><i /> 흐름이 좋아요</span></div>
+          <div className="floating-widget todo-widget"><small>TODAY</small><span className="todo-done">✓ 자료 정리</span><span>○ 발표 연습</span><b>1 / 2 COMPLETE</b></div>
+          <div className="floating-widget ticket-widget"><small>GAMCHA TICKET</small><strong>+1</strong><span>집중 완료 보상</span></div>
+          <div className="showcase-pet" aria-hidden="true"><img className="showcase-pet-a" src="./pet/walk-0.png" alt="" /><img className="showcase-pet-b" src="./pet/walk-1.png" alt="" /></div>
         </div>
       </section>
 
@@ -108,9 +143,10 @@ export default function Home() {
       </section>
 
       <section className="download section-shell" id="download">
-        <p className="eyebrow">CHOOSE YOUR DESKTOP</p><h2>어디에서 함께할까요?</h2><p className="download-intro">사용 중인 운영체제를 선택하면 각 버전의 GitHub 저장소로 이동합니다.<br />설치 파일은 저장소의 Releases에서 받을 수 있어요.</p>
+        <p className="eyebrow">CHOOSE YOUR DESKTOP</p><h2>어디에서 함께할까요?</h2><p className="download-intro">운영체제를 선택하면 최신 베타 릴리스로 바로 이동합니다.<br />설치 파일과 안내를 한곳에서 확인하세요.</p>
 <p className="beta-notice"><strong>베타 테스트 안내</strong><span>현재 정식 출시 전 베타 테스트 버전입니다.</span></p>
-        <div className="platform-grid">{platforms.map((platform) => <a className="platform-card" href={platform.href} target="_blank" rel="noopener noreferrer" key={platform.name}><span className="platform-icon" aria-hidden="true">{platform.name === "Windows" ? "⊞" : "●"}</span><span><strong>{platform.label}</strong><small>{platform.note} · GitHub Releases</small></span><b aria-hidden="true">↗</b></a>)}</div>
+        <div className="platform-grid">{platforms.map((platform) => <a className="platform-card" href={platform.downloadHref} target="_blank" rel="noopener noreferrer" key={platform.name}><span className="platform-icon" aria-hidden="true">{platform.name === "Windows" ? "⊞" : "●"}</span><span><strong>{platform.label}</strong><small>{platform.note} · 최신 {platform.version}</small></span><b aria-hidden="true">↓</b></a>)}</div>
+        <p className="source-links">소스 코드가 궁금한가요? {platforms.map((platform, index) => <span key={platform.name}>{index > 0 && " · "}<a href={platform.href} target="_blank" rel="noopener noreferrer">{platform.name} 저장소 ↗</a></span>)}</p>
       </section>
 
       <footer><a className="brand" href="#top"><span className="brand-mark">M</span><span>Desktop Migam</span></a><p>집중하는 당신 곁의 작은 데스크톱 친구.</p><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>

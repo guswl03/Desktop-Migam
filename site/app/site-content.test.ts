@@ -1,12 +1,37 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { features, platforms } from "./site-content";
+import { features, platforms, showcaseMoments } from "./site-content";
 
 describe("platform links", () => {
   it("routes visitors to the maintained Windows and macOS repositories", () => {
     expect(platforms.map(({ name, href }) => ({ name, href }))).toEqual([
       { name: "Windows", href: "https://github.com/guswl03/Desktop-Migam-Window" },
       { name: "macOS", href: "https://github.com/guswl03/Desktop-Migam-Mac" },
+    ]);
+  });
+
+  it("offers a stable latest-release destination for each desktop platform", () => {
+    expect(platforms.map(({ name, downloadHref, version }) => ({ name, downloadHref, version }))).toEqual([
+      {
+        name: "Windows",
+        downloadHref: "https://github.com/guswl03/Desktop-Migam-Window/releases/latest",
+        version: "v0.1.2",
+      },
+      {
+        name: "macOS",
+        downloadHref: "https://github.com/guswl03/Desktop-Migam-Mac/releases/latest",
+        version: "v0.1.1",
+      },
+    ]);
+  });
+});
+
+describe("product showcase", () => {
+  it("presents real product moments in a deliberate narrative order", () => {
+    expect(showcaseMoments.map(({ id, title }) => ({ id, title }))).toEqual([
+      { id: "focus", title: "집중은 더 또렷하게" },
+      { id: "play", title: "데스크톱은 더 생생하게" },
+      { id: "reward", title: "끝낸 만큼 더 즐겁게" },
     ]);
   });
 });
