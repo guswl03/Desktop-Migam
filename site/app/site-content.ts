@@ -29,3 +29,34 @@ export const features = [
   { number: "03", title: "집중할수록 모이는 즐거움", description: "집중을 완료하면 티켓을 받고, 감챠로 새로운 코스튬을 모아 나만의 감자봇을 만들어요.", visual: "collection" },
 ] as const;
 
+
+export const storyMoments = [
+  {
+    id: "focus",
+    index: "01",
+    english: "POMODORO",
+    title: "뽀모도로 타이머",
+    description: "집중 시간을 정하면 감자봇도 마지막 자리에서 앉아 함께 몰입해요. 세션을 끝내면 감챠 티켓이 도착합니다.",
+  },
+  {
+    id: "jump",
+    index: "02",
+    english: "PET INTERACTION",
+    title: "점프와 댄스",
+    description: "클릭하고 말을 걸어 보세요. 걷고, 뛰고, 춤추는 작은 반응들이 반복되는 데스크톱에 리듬을 더해요.",
+  },
+  {
+    id: "monitor",
+    index: "03",
+    english: "RESOURCE MONITOR",
+    title: "CPU / MEMORY",
+    description: "배터리와 CPU, 메모리 상태를 캐릭터의 움직임과 함께 가볍게 확인해요. 숫자는 또렷하고 분위기는 귀엽게.",
+  },
+  {
+    id: "delivery",
+    index: "04",
+    english: "IMAGE DELIVERY",
+    title: "이미지 배달",
+    description: "이미지를 화면에 끌어오면 감자봇이 카드처럼 들고 배달해요. 때로는 랜덤 이미지로 예상 못 한 장난도 시작됩니다.",
+  },
+] as const;

@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { features, platforms, showcaseMoments } from "./site-content";
+import { features, platforms, showcaseMoments, storyMoments } from "./site-content";
 
 describe("platform links", () => {
   it("routes visitors to the maintained Windows and macOS repositories", () => {
@@ -36,6 +36,17 @@ describe("product showcase", () => {
   });
 });
 
+describe("Canva-inspired product story", () => {
+  it("guides visitors through the app features in the same order as the product journey", () => {
+    expect(storyMoments.map(({ id, title }) => ({ id, title }))).toEqual([
+      { id: "focus", title: "뽀모도로 타이머" },
+      { id: "jump", title: "점프와 댄스" },
+      { id: "monitor", title: "CPU / MEMORY" },
+      { id: "delivery", title: "이미지 배달" },
+    ]);
+  });
+});
+
 describe("feature visuals", () => {
   it("uses cutout compositions instead of full-window screenshots", () => {
     expect(features.map(({ number, visual }) => ({ number, visual }))).toEqual([
@@ -53,7 +64,7 @@ describe("gacha reward flow", () => {
 
     expect(page).not.toContain('className="costumed-hat"');
     expect(page).not.toContain("./pet/idle.png");
-    expect(page).toContain("./pet/base-idle.png");
+    expect(page).toContain("/Desktop-Migam/pet/base-idle.png");
     expect(page).toContain('className="gacha-flow"');
     expect(page).toContain('className="gacha-step focus-reward-step"');
     expect(page).toContain('className="gacha-step ticket-draw-step"');
@@ -69,13 +80,13 @@ describe("costume collection card", () => {
 
     expect(page).not.toContain('className="catalog-pet"');
     expect(page.match(/className="catalog-item/g)).toHaveLength(3);
-    expect(page).toContain("./pet/costume-beanie.png");
+    expect(page).toContain("/Desktop-Migam/pet/costume-beanie.png");
   });
 
   it("shows a correctly named santa hat card at the standard size", () => {
     const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
 
-    expect(page).toContain("./pet/costume-santa-hat.png");
+    expect(page).toContain("/Desktop-Migam/pet/costume-santa-hat.png");
     expect(page).not.toContain("헤드폰");
     expect(page).toContain('className="catalog-item catalog-item-owned"');
     expect(page).toContain("<span>산타 모자</span>");
