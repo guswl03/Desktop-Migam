@@ -244,7 +244,7 @@ export default function Home() {
             <strong>강인태</strong><i />
             <strong>정현조</strong>
           </div>
-          <p className="mentor-thanks">프로젝트에 소중한 라이선스를 제공해 주신 <strong>김주생 멘토님</strong>께 감사드립니다.</p>
+          <p className="mentor-thanks">미친감자 이미지 사용을 허락해 주신 <strong>김주생 멘토님</strong>께 감사드립니다.</p>
         </div>
         <p className="footer-copyright">© 2026 DESKTOP MIGAM · MADE WITH FOCUS AND PLAY</p>
       </footer>
