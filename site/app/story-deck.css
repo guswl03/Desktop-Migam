@@ -65,7 +65,7 @@
 
 .story-cover h2 span:last-child {
   padding-right: .08em;
-  padding-bottom: .14em;
+  line-height: 1;
   color: transparent;
   background: linear-gradient(90deg, #ff4d54 0 17%, #ff9f1a 17% 33%, #ffd629 33% 49%, #14a86d 49% 65%, #286bf2 65% 82%, #8d45d8 82%);
   background-clip: text;
