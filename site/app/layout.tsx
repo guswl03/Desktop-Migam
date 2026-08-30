@@ -6,6 +6,7 @@ import "./visual-feedback.css";
 import "./collection-visuals.css";
 import "./experience.css";
 import "./story-deck.css";
+import "./footer-credits.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://guswl03.github.io/Desktop-Migam/"),

@@ -230,7 +230,24 @@ export default function Home() {
         <p className="source-links">소스 코드가 궁금한가요? {platforms.map((platform, index) => <span key={platform.name}>{index > 0 && " · "}<a href={platform.href} target="_blank" rel="noopener noreferrer">{platform.name} 저장소 ↗</a></span>)}</p>
       </section>
 
-      <footer><a className="brand" href="#top"><span className="brand-mark">M</span><span>Desktop Migam</span></a><p>집중하는 당신 곁의 작은 데스크톱 친구.</p><a href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+      <footer className="site-footer">
+        <div className="footer-main">
+          <a className="brand" href="#top"><span className="brand-mark">M</span><span>Desktop Migam</span></a>
+          <p>집중하는 당신 곁의 작은 데스크톱 친구.</p>
+          <a className="footer-github" href="https://github.com/guswl03/Desktop-Migam" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+        <div className="footer-credits">
+          <p className="credit-track">BoB 15기 · 보안제품개발트랙</p>
+          <div className="credit-makers">
+            <span>미감펫을 만든 사람들</span>
+            <strong>이현지</strong><i />
+            <strong>강인태</strong><i />
+            <strong>정현조</strong>
+          </div>
+          <p className="mentor-thanks">프로젝트에 소중한 라이선스를 제공해 주신 <strong>김주생 멘토님</strong>께 감사드립니다.</p>
+        </div>
+        <p className="footer-copyright">© 2026 DESKTOP MIGAM · MADE WITH FOCUS AND PLAY</p>
+      </footer>
     </main>
   );
 }
